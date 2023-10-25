@@ -14,3 +14,39 @@
   ・〜@tech.ne.jp
   ・〜@techweb.ne.jp
   ・〜@techbank.jp
+
+★回答★
+def specific_domain?(address)
+  case address
+  when /@tech.ne.jp/
+    return true
+  when /@techweb.ne.jp/
+    return true
+  when /@techbank.jp/
+    return true
+  else
+    return false
+  end
+end
+
+address = "hoge@tech.ne.jp"
+
+puts specific_domain?(address)
+
+
+★解説★
+2行目ではcase文で対象となるオブジェクトとして、addressという変数をセットしている。
+そして、オブジェクトが@tech.ne.jp・@techweb.ne.jp・@techbank.jpとマッチする場合にはtrueを出力し、
+どれにも当てはまらない場合にはfalseを出力するという条件分岐を記述している。
+
+正規表現における「または」の意味を持つ|（パイプ）を使用すると、以下のようにコードを短縮することができる
+
+def specific_domain?(address)
+  if address.match(/@tech.ne.jp|@techweb.ne.jp|@techbank.jp/)
+    return true
+  else
+    return false
+  end
+end
+address = "hoge@techweb.ne.jp"
+puts specific_domain?(address)
