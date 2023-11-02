@@ -55,3 +55,13 @@ Double（倍精度浮動小数点数）:
 
 double は倍精度浮動小数点数を表現するためのデータ型です。倍精度浮動小数点数は、より高い精度を持つ浮動小数点数で、より多くの桁数を表現できます。
 double は通常64ビットで表現され、float よりも高い精度を提供します。これは科学計算や工学計算など、高精度の計算が必要なアプリケーションで一般的に使用されます。
+
+# resourcesリソーシーズメソッド
+GET          /tweets(.:format)                   tweets#index
+POST         /tweets(.:format)                   tweets#create
+GET          /tweets/new(.:format)               tweets#new
+GET          /tweets/:id/edit(.:format)          tweets#edit
+GET          /tweets/:id(.:format)               tweets#show
+PATCH        /tweets/:id(.:format)               tweets#update
+PUT          /tweets/:id(.:format)               tweets#update
+DELETE       /tweets/:id(.:format)               tweets#destroy
